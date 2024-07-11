@@ -12,7 +12,7 @@ This directory contains a simple Hangman game implemented in Python.
 
 ## How to Run
 
-1. Ensure you have Python installed on your system.
+1. Ensure you have Python and `pip` installed on your system.
 2. Clone this repository.
 3. Navigate to the `hangman` directory.
 4. Install the required library by running:
