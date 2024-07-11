@@ -1,12 +1,15 @@
 import random
+import nltk
+from nltk.corpus import words
+
+# Ensure you have downloaded the word list
+nltk.download('words')
 
 def load_words():
-    with open("words.txt", "r") as file:
-        words = file.readlines()
-    return [word.strip() for word in words]
+    return words.words()
 
 def choose_word(words):
-    return random.choice(words)
+    return random.choice(words).upper()
 
 def display_hangman(lives):
     stages = [
@@ -129,8 +132,8 @@ def play_game(word):
         print("Sorry, you ran out of lives. The word was " + word + ". Maybe next time!")
 
 def main():
-    words = load_words()
-    word = choose_word(words)
+    words_list = load_words()
+    word = choose_word(words_list)
     play_game(word)
 
 if __name__ == "__main__":
