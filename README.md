@@ -4,8 +4,8 @@ Welcome to the Introduction to Python 3 repository. This repository contains var
 
 ## Projects
 
-- [Hangman](hangman/README.md)
+- [Hangman](hangman/README.md) (a class effort!)
 
 ## License
 
-This repository is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+This repository is licensed under the MIT License. See the [LICENSE](LICENSE.md) file for more details.
