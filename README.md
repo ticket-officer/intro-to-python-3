@@ -1,4 +1,4 @@
-# Intro to Python 3
+# Intro to Python 3 🐍
 
 Welcome everyone! This repository contains all the creative Python games designed by our classes at the end of our "Intro to Python 3" course.
 
