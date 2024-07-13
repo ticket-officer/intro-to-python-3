@@ -15,11 +15,11 @@ def fetch_random_word():
 def get_word_info(word):
     meaning = dictionary.meaning('en', word.lower())
     synonyms = dictionary.synonym('en', word.lower())
-    if meaning:
+    if meaning and meaning[0]:
         # Print the full meaning for debugging purposes
         print(f"Meaning structure for {word}: {meaning}")
         # Extract the first definition from the dictionary
-        definition = meaning[0]['definition'] if meaning[0].get('definition') else "Definition not found."
+        definition = meaning[0][0]['definition'] if 'definition' in meaning[0][0] else "Definition not found."
         return definition, synonyms
     else:
         return None, None
