@@ -1,12 +1,22 @@
 import random
 from random_word import RandomWords
+from PyDictionary import PyDictionary
 
-# Initialize the RandomWords object
+# Initialize the RandomWords and PyDictionary objects
 r = RandomWords()
+dictionary = PyDictionary()
 
 def fetch_random_word():
     word = r.get_random_word()
     return word.upper()
+
+def get_word_definition(word):
+    meaning = dictionary.meaning(word.lower())
+    if meaning:
+        definition = next(iter(meaning.values()))[0]
+        return definition
+    else:
+        return "Definition not found."
 
 def display_hangman(lives):
     stages = [
@@ -136,6 +146,10 @@ def play_game(word):
         print("Congratulations, you guessed the word! You win!")
     else:
         print("Sorry, you ran out of lives. The word was " + word + ". Maybe next time!")
+
+    # Fetch and display the word definition
+    definition = get_word_definition(word)
+    print(f"Definition of {word}: {definition}")
 
 def main():
     play_again = 'Y'
