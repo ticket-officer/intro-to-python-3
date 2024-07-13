@@ -9,15 +9,14 @@ dictionary = MultiDictionary()
 def fetch_random_word():
     while True:
         word = r.get_random_word().upper()
-        if get_word_info(word):
+        definition, synonyms = get_word_info(word)
+        if definition:
             return word
 
 def get_word_info(word):
     meaning = dictionary.meaning('en', word.lower())
     synonyms = dictionary.synonym('en', word.lower())
     if meaning and meaning[0]:
-        # Print the full meaning for debugging purposes
-        print(f"Meaning structure for {word}: {meaning}")
         # Extract the first definition from the dictionary
         definition = meaning[0][0]['definition'] if 'definition' in meaning[0][0] else "Definition not found."
         return definition, synonyms
