@@ -9,16 +9,21 @@ This directory contains a simple Hangman game implemented in Python.
 3. If you guess a correct letter, it will be revealed in the word.
 4. If you guess an incorrect letter, you will lose a life.
 5. The game continues until you either guess the word correctly or run out of lives.
+6. The definition of the word is revealed at the end of the game.
 
 ## How to Run
 
 1. Ensure you have Python and `pip` installed on your system.
 2. Clone this repository.
 3. Navigate to the `hangman` directory.
-4. Install the required library by running:
+4. Install the required libraries by running:
 
 ```bash
 pip install random-word
+```
+
+```bash
+pip install PyDictionary
 ```
   
 5. Run the game by executing the following command:
