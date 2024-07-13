@@ -1,24 +1,26 @@
 import random
 from random_word import RandomWords
-from PyDictionary import PyDictionary
+from PyMultiDictionary import MultiDictionary
 
-# Initialize the RandomWords and PyDictionary objects
+# Initialize the RandomWords and MultiDictionary objects
 r = RandomWords()
-dictionary = PyDictionary()
+dictionary = MultiDictionary()
 
 def fetch_random_word():
     while True:
         word = r.get_random_word().upper()
-        if get_word_definition(word):
+        if get_word_info(word):
             return word
 
-def get_word_definition(word):
-    meaning = dictionary.meaning(word.lower())
+def get_word_info(word):
+    meaning = dictionary.meaning('en', word.lower())
+    synonyms = dictionary.synonym('en', word.lower())
     if meaning:
-        definition = next(iter(meaning.values()))[0]
-        return definition
+        # Extract the first definition from the dictionary
+        definition = next(iter(meaning['definitions']))['definition']
+        return definition, synonyms
     else:
-        return None
+        return None, None
 
 def display_hangman(lives):
     stages = [
@@ -149,9 +151,13 @@ def play_game(word):
     else:
         print("Sorry, you ran out of lives. The word was " + word + ". Maybe next time!")
 
-    # Fetch and display the word definition
-    definition = get_word_definition(word)
+    # Fetch and display the word definition and synonyms
+    definition, synonyms = get_word_info(word)
     print(f"Definition of {word}: {definition}")
+    if synonyms:
+        print(f"Synonyms of {word}: {', '.join(synonyms)}")
+    else:
+        print(f"No synonyms found for {word}.")
 
 def main():
     play_again = 'Y'
