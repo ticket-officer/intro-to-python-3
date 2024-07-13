@@ -10,15 +10,15 @@ def fetch_random_word():
     while True:
         word = r.get_random_word().upper()
         definition, synonyms = get_word_info(word)
-        if definition:
+        if definition:  # Ensure the word has a valid definition
             return word
 
 def get_word_info(word):
     meaning = dictionary.meaning('en', word.lower())
     synonyms = dictionary.synonym('en', word.lower())
-    if meaning and meaning[0]:
+    if meaning and 'definitions' in meaning:
         # Extract the first definition from the dictionary
-        definition = meaning[0][0]['definition'] if 'definition' in meaning[0][0] else "Definition not found."
+        definition = meaning['definitions'][0]['definition'] if 'definition' in meaning['definitions'][0] else "Definition not found."
         return definition, synonyms
     else:
         return None, None
