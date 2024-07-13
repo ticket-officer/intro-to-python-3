@@ -7,8 +7,10 @@ r = RandomWords()
 dictionary = PyDictionary()
 
 def fetch_random_word():
-    word = r.get_random_word()
-    return word.upper()
+    while True:
+        word = r.get_random_word().upper()
+        if get_word_definition(word):
+            return word
 
 def get_word_definition(word):
     meaning = dictionary.meaning(word.lower())
@@ -16,7 +18,7 @@ def get_word_definition(word):
         definition = next(iter(meaning.values()))[0]
         return definition
     else:
-        return "Definition not found."
+        return None
 
 def display_hangman(lives):
     stages = [
