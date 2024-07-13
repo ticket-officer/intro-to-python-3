@@ -129,8 +129,11 @@ def play_game(word):
         print("Sorry, you ran out of lives. The word was " + word + ". Maybe next time!")
 
 def main():
-    word = fetch_random_word()
-    play_game(word)
+    play_again = 'Y'
+    while play_again.upper() == 'Y':
+        word = fetch_random_word()
+        play_game(word)
+        play_again = input("Do you want to play again? (Y/N): ")
 
 if __name__ == "__main__":
     main()
