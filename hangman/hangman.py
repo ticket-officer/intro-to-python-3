@@ -1,20 +1,12 @@
 import random
-import nltk
-from nltk.corpus import words
-import os
+from random_word import RandomWords
 
-def download_words():
-    try:
-        nltk.data.find('corpora/words.zip')
-    except LookupError:
-        print("Downloading the 'words' corpus...")
-        nltk.download('words')
+# Initialize the RandomWords object
+r = RandomWords()
 
-def load_words():
-    return words.words()
-
-def choose_word(words_list):
-    return random.choice(words_list).upper()
+def fetch_random_word():
+    word = r.get_random_word()
+    return word.upper()
 
 def display_hangman(lives):
     stages = [
@@ -137,9 +129,7 @@ def play_game(word):
         print("Sorry, you ran out of lives. The word was " + word + ". Maybe next time!")
 
 def main():
-    download_words()
-    words_list = load_words()
-    word = choose_word(words_list)
+    word = fetch_random_word()
     play_game(word)
 
 if __name__ == "__main__":
