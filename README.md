@@ -1,10 +1,10 @@
-# Introduction to Python 3
+# Intro to Python 3
 
-Welcome to the Introduction to Python 3 repository. This repository contains various Python projects aimed at teaching the basics of Python programming.
+Welcome, this repository contains the Python games designed by our classes at the end of our Intro to Python 3 course.
 
 ## Projects
 
-- [Hangman](hangman/README.md) (a class effort!)
+- [Hangman](hangman/README.md)
 
 ## License
 
