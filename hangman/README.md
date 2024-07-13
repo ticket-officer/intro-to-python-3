@@ -19,11 +19,7 @@ This directory contains a simple Hangman game implemented in Python.
 4. Install the required libraries by running:
 
 ```bash
-pip install random-word
-```
-
-```bash
-pip install PyDictionary
+pip install random-word PyDictionary
 ```
   
 5. Run the game by executing the following command:
