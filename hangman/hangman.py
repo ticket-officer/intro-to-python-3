@@ -13,6 +13,15 @@ def display_hangman(lives):
         '''
            -----
            |   |
+           X   |
+          /|\\  |
+          / \\  |
+               |
+        ---------
+        ''',
+        '''
+           -----
+           |   |
            O   |
           /|\\  |
           / \\  |
@@ -81,7 +90,7 @@ def play_game(word):
     guessed = False
     guessed_letters = []
     guessed_words = []
-    lives = 6
+    lives = 7
 
     print("Let's play Hangman!")
     print(display_hangman(lives))
