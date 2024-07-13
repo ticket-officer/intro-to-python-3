@@ -1,10 +1,14 @@
 # Intro to Python 3
 
-Welcome, this repository contains the Python games designed by our classes at the end of our Intro to Python 3 course.
+Welcome everyone! This repository contains all the Python games designed by our classes at the end of our "Intro to Python 3" course.
 
 ## Projects
 
 - [Hangman](hangman/README.md)
+
+## Public Contributions
+
+We welcome contributions! Please fork the repository and submit a pull request with your additions.
 
 ## License
 
